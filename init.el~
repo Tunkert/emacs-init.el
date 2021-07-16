@@ -1,0 +1,36 @@
+;; get rid of welcome screen on startup
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
+(setq inhibit-splash-screen t)
+
+;; set default font and size
+(set-default-font "Cousine 12")
+
+;; maximize screen on startup
+(add-hook 'window-setup-hook 'toggle-frame-maximized t)
+
+;; disable menu on startup
+(menu-bar-mode -1)
+
+;; disable tools on startup
+(tool-bar-mode -1)
+
+;; disable scroll bar on startup
+(toggle-scroll-bar -1)
+
+;; change theme
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+(load-theme 'atom-one-dark t)
+
+;; emmet mode
+(add-to-list 'load-path "~/emacs.d/emmet-mode/")
+(require 'emmet-mode)
+
+
+
+
