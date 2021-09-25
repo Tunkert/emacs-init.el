@@ -7,7 +7,7 @@
 
 (menu-bar-mode -1)
 
-(load-theme 'doom-shades-of-purple t)
+(load-theme 'doom-dracula t)
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
@@ -34,58 +34,46 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector
-   ["#2D2A2E" "#CC6666" "#A9DC76" "#FFD866" "#78DCE8" "#FF6188" "#78DCE8" "#FCFCFA"])
+   ["#ffffff" "#c82829" "#718c00" "#eab700" "#4271ae" "#c678dd" "#8abeb7" "#4d4d4c"])
  '(custom-safe-themes
-   '("234dbb732ef054b109a9e5ee5b499632c63cc24f7c2383a849815dacc1727cb6" "e8df30cd7fb42e56a4efc585540a2e63b0c6eeb9f4dc053373e05d774332fc13" "cf922a7a5c514fad79c483048257c5d8f242b21987af0db813d3f0b138dfaf53" "4f1d2476c290eaa5d9ab9d13b60f2c0f1c8fa7703596fa91b235db7f99a9441b" "a9a67b318b7417adbedaab02f05fa679973e9718d9d26075c6235b1f0db703c8" "0b3aee906629ac7c3bd994914bf252cf92f7a8b0baa6d94cb4dfacbd4068391d" "c5ded9320a346146bbc2ead692f0c63be512747963257f18cc8518c5254b7bf5" "7a7b1d475b42c1a0b61f3b1d1225dd249ffa1abb1b7f726aec59ac7ca3bf4dae" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "b0e446b48d03c5053af28908168262c3e5335dcad3317215d9fdeb8bac5bacf9" "97db542a8a1731ef44b60bc97406c1eb7ed4528b0d7296997cbb53969df852d6" "7eea50883f10e5c6ad6f81e153c640b3a288cd8dc1d26e4696f7d40f754cc703" default))
- '(exwm-floating-border-color "#413f42")
- '(fci-rule-color "#4C4A4D")
- '(highlight-tail-colors ((("#393b35") . 0) (("#343b40") . 20)))
- '(hl-todo-keyword-faces
-   '(("TODO" . "#dc752f")
-     ("NEXT" . "#dc752f")
-     ("THEM" . "#2d9574")
-     ("PROG" . "#4f97d7")
-     ("OKAY" . "#4f97d7")
-     ("DONT" . "#f2241f")
-     ("FAIL" . "#f2241f")
-     ("DONE" . "#86dc2f")
-     ("NOTE" . "#b1951d")
-     ("KLUDGE" . "#b1951d")
-     ("HACK" . "#b1951d")
-     ("TEMP" . "#b1951d")
-     ("FIXME" . "#dc752f")
-     ("XXX+" . "#dc752f")
-     ("\\?\\?\\?+" . "#dc752f")))
- '(jdee-db-active-breakpoint-face-colors (cons "#19181A" "#FCFCFA"))
- '(jdee-db-requested-breakpoint-face-colors (cons "#19181A" "#A9DC76"))
- '(jdee-db-spec-breakpoint-face-colors (cons "#19181A" "#727072"))
- '(objed-cursor-color "#CC6666")
+   '("613aedadd3b9e2554f39afe760708fc3285bf594f6447822dd29f947f0775d6c" "fe2539ccf78f28c519541e37dc77115c6c7c2efcec18b970b16e4a4d2cd9891d" default))
+ '(exwm-floating-border-color "#d6d4d4")
+ '(fci-rule-color "#a3a1a1")
+ '(highlight-tail-colors
+   ((("#f0f3e5" "#669900" "green")
+     . 0)
+    (("#f3f8f7" "#8abeb7" "cyan")
+     . 20)))
+ '(jdee-db-active-breakpoint-face-colors (cons "#f2f2f2" "#4271ae"))
+ '(jdee-db-requested-breakpoint-face-colors (cons "#f2f2f2" "#718c00"))
+ '(jdee-db-spec-breakpoint-face-colors (cons "#f2f2f2" "#8e908c"))
+ '(objed-cursor-color "#c82829")
  '(package-selected-packages
-   '(magit key-chord evil-visual-mark-mode spacemacs-theme doom-themes dracula-theme prettier web-mode php-mode emmet-mode use-package))
- '(pdf-view-midnight-colors (cons "#FCFCFA" "#2D2A2E"))
+   '(blacken flycheck elpy auto-complete js2-mode doom-themes key-chord emmet-mode php-mode web-mode evil-visual-mark-mode use-package))
+ '(pdf-view-midnight-colors (cons "#4d4d4c" "#ffffff"))
  '(rustic-ansi-faces
-   ["#2D2A2E" "#CC6666" "#A9DC76" "#FFD866" "#78DCE8" "#FF6188" "#78DCE8" "#FCFCFA"])
- '(vc-annotate-background "#2D2A2E")
+   ["#ffffff" "#c82829" "#718c00" "#eab700" "#4271ae" "#c678dd" "#8abeb7" "#4d4d4c"])
+ '(vc-annotate-background "#ffffff")
  '(vc-annotate-color-map
    (list
-    (cons 20 "#A9DC76")
-    (cons 40 "#c5da70")
-    (cons 60 "#e2d96b")
-    (cons 80 "#FFD866")
-    (cons 100 "#fec266")
-    (cons 120 "#fdad66")
-    (cons 140 "#FC9867")
-    (cons 160 "#fd8572")
-    (cons 180 "#fe737d")
-    (cons 200 "#FF6188")
-    (cons 220 "#ee627c")
-    (cons 240 "#dd6471")
-    (cons 260 "#CC6666")
-    (cons 280 "#b56869")
-    (cons 300 "#9f6b6c")
-    (cons 320 "#886d6f")
-    (cons 340 "#4C4A4D")
-    (cons 360 "#4C4A4D")))
+    (cons 20 "#718c00")
+    (cons 40 "#999a00")
+    (cons 60 "#c1a800")
+    (cons 80 "#eab700")
+    (cons 100 "#eda70a")
+    (cons 120 "#f19714")
+    (cons 140 "#f5871f")
+    (cons 160 "#e5825e")
+    (cons 180 "#d57d9d")
+    (cons 200 "#c678dd")
+    (cons 220 "#c65da1")
+    (cons 240 "#c74265")
+    (cons 260 "#c82829")
+    (cons 280 "#b94141")
+    (cons 300 "#ab5c5a")
+    (cons 320 "#9c7673")
+    (cons 340 "#a3a1a1")
+    (cons 360 "#a3a1a1")))
  '(vc-annotate-very-old-color nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -93,6 +81,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+(ac-config-default)
 
 (defun my-web-mode-hook ()
   "Hooks for Web mode."
@@ -119,3 +109,21 @@
 (setq key-chord-two-keys-delay 0.5)
 (key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
 (key-chord-mode 1)
+
+;; ====================================
+;; Python Development Setup
+;; ====================================
+;; Enable elpy
+(elpy-enable)
+
+;; Enable Flycheck
+(when (require 'flycheck nil t)
+  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+  (add-hook 'elpy-mode-hook 'flycheck-mode))
+
+;; Enable line numbers
+;; set type of line numbering (global variable)
+(setq display-line-numbers-type 'relative) 
+
+;; activate line numbering in all buffers/modes
+(global-display-line-numbers-mode) 
