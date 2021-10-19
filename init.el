@@ -5,7 +5,7 @@
 (setq inhibit-splash-screen t)
 
 ;; set default font and size
-(set-face-attribute 'default nil :font "Cousine-11" )
+(set-face-attribute 'default nil :font "Menlo-11" )
 
 ;; maximize screen on startup
 (add-hook 'window-setup-hook 'toggle-frame-maximized t)
@@ -41,7 +41,7 @@
  '(jdee-db-spec-breakpoint-face-colors (cons "#1c1f2b" "#676E95"))
  '(objed-cursor-color "#ff5370")
  '(package-selected-packages
-   '(ob-translate prettier ac-js2 ac-math ac-html-bootstrap ac-php php-mode auto-complete neotree doom-themes emmet-mode web-mode key-chord evil-visual-mark-mode))
+   '(abyss-theme ob-translate prettier ac-js2 ac-math ac-html-bootstrap ac-php php-mode auto-complete neotree doom-themes emmet-mode web-mode key-chord evil-visual-mark-mode))
  '(pdf-view-midnight-colors (cons "#EEFFFF" "#292D3E"))
  '(rustic-ansi-faces
    ["#292D3E" "#ff5370" "#c3e88d" "#ffcb6b" "#82aaff" "#c792ea" "#89DDFF" "#EEFFFF"])
