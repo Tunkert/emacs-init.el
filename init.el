@@ -1,6 +1,3 @@
-;; inihibit cl warning
-(setq byte-compile-warnings '(cl-functions))
-
 ;; inhibit splash screen
 (setq inhibit-splash-screen t)
 
@@ -20,8 +17,8 @@
 (toggle-scroll-bar -1)
 
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
 (package-initialize)
 
 (custom-set-variables
@@ -29,43 +26,45 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default bold shadow italic underline bold bold-italic bold])
  '(ansi-color-names-vector
-   ["#292D3E" "#ff5370" "#c3e88d" "#ffcb6b" "#82aaff" "#c792ea" "#89DDFF" "#EEFFFF"])
+   (vector "#ffffff" "#f36c60" "#8bc34a" "#fff59d" "#4dd0e1" "#b39ddb" "#81d4fa" "#263238"))
  '(custom-safe-themes
-   '("a0be7a38e2de974d1598cf247f607d5c1841dbcef1ccd97cded8bea95a7c7639" default))
- '(exwm-floating-border-color "#232635")
- '(fci-rule-color "#676E95")
- '(highlight-tail-colors ((("#383f45") . 0) (("#323e51") . 20)))
- '(jdee-db-active-breakpoint-face-colors (cons "#1c1f2b" "#c792ea"))
- '(jdee-db-requested-breakpoint-face-colors (cons "#1c1f2b" "#c3e88d"))
- '(jdee-db-spec-breakpoint-face-colors (cons "#1c1f2b" "#676E95"))
- '(objed-cursor-color "#ff5370")
+   '("f149d9986497e8877e0bd1981d1bef8c8a6d35be7d82cba193ad7e46f0989f6a" "90a6f96a4665a6a56e36dec873a15cbedf761c51ec08dd993d6604e32dd45940" "3b8284e207ff93dfc5e5ada8b7b00a3305351a3fb222782d8033a400a48eca48" "171d1ae90e46978eb9c342be6658d937a83aaa45997b1d7af7657546cae5985b" default))
+ '(electric-pair-mode t)
+ '(fci-rule-color "#37474f")
+ '(hl-sexp-background-color "#1c1f26")
  '(package-selected-packages
-   '(abyss-theme ob-translate prettier ac-js2 ac-math ac-html-bootstrap ac-php php-mode auto-complete neotree doom-themes emmet-mode web-mode key-chord evil-visual-mark-mode))
- '(pdf-view-midnight-colors (cons "#EEFFFF" "#292D3E"))
- '(rustic-ansi-faces
-   ["#292D3E" "#ff5370" "#c3e88d" "#ffcb6b" "#82aaff" "#c792ea" "#89DDFF" "#EEFFFF"])
- '(vc-annotate-background "#292D3E")
+   '(emmet-mode zenburn-theme web-mode wc-mode markdown-mode atom-one-dark-theme material-theme elpy))
+ '(tetris-x-colors
+   [[229 192 123]
+    [97 175 239]
+    [209 154 102]
+    [224 108 117]
+    [152 195 121]
+    [198 120 221]
+    [86 182 194]])
+ '(vc-annotate-background nil)
  '(vc-annotate-color-map
-   (list
-    (cons 20 "#c3e88d")
-    (cons 40 "#d7de81")
-    (cons 60 "#ebd476")
-    (cons 80 "#ffcb6b")
-    (cons 100 "#fcb66b")
-    (cons 120 "#f9a16b")
-    (cons 140 "#f78c6c")
-    (cons 160 "#e78e96")
-    (cons 180 "#d690c0")
-    (cons 200 "#c792ea")
-    (cons 220 "#d97dc1")
-    (cons 240 "#ec6898")
-    (cons 260 "#ff5370")
-    (cons 280 "#d95979")
-    (cons 300 "#b36082")
-    (cons 320 "#8d678b")
-    (cons 340 "#676E95")
-    (cons 360 "#676E95")))
+   '((20 . "#f36c60")
+     (40 . "#ff9800")
+     (60 . "#fff59d")
+     (80 . "#8bc34a")
+     (100 . "#81d4fa")
+     (120 . "#4dd0e1")
+     (140 . "#b39ddb")
+     (160 . "#f36c60")
+     (180 . "#ff9800")
+     (200 . "#fff59d")
+     (220 . "#8bc34a")
+     (240 . "#81d4fa")
+     (260 . "#4dd0e1")
+     (280 . "#b39ddb")
+     (300 . "#f36c60")
+     (320 . "#ff9800")
+     (340 . "#fff59d")
+     (360 . "#8bc34a")))
  '(vc-annotate-very-old-color nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -74,13 +73,25 @@
  ;; If there is more than one, they won't work right.
  )
 
-;; change theme
-(load-theme 'doom-palenight t)
+;; before this you need to add pre-requisites: pip3 install jedi autopep8 flake8 ipython importmagic yapf
 
-;; emmet mode
-(require 'emmet-mode)
+(elpy-enable)
+(setq python-shell-interpreter "ipython"
+      python-shell-interpreter-args "-i --simple-prompt")
 
-;; web mode
+(load-theme 'atom-one-dark t)
+
+(global-display-line-numbers-mode t)
+
+(electric-pair-mode 1)
+
+;; no backup files
+(setq make-backup-files nil)
+
+;; setting up Emacs for markdown mode
+;; install markdown-mode
+
+;; setting up web mode
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
@@ -100,74 +111,3 @@
   (setq web-mode-code-indent-offset 2)
 )
 (add-hook 'web-mode-hook  'my-web-mode-hook)
-
-;; evil mode
-(require 'evil)
-(evil-mode 1)
-
-;;Exit insert mode by pressing j and then j quickly
-(setq key-chord-two-keys-delay 0.5)
-(key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
-(key-chord-mode 1)
-
-;; Enable line numbers
-;; set type of line numbering (global variable)
-(setq display-line-numbers-type 'relative) 
-
-;; activate line numbering in all buffers/modes
-(global-display-line-numbers-mode) 
-
-;; auto complete
-(ac-config-default)
-
-;; neo tree config
-(add-to-list 'load-path "/some/path/neotree")
-(require 'neotree)
-(global-set-key [f8] 'neotree-toggle)
-
-(add-hook 'neotree-mode-hook
-              (lambda ()
-                (define-key evil-normal-state-local-map (kbd "TAB") 'neotree-enter)
-                (define-key evil-normal-state-local-map (kbd "SPC") 'neotree-quick-look)
-                (define-key evil-normal-state-local-map (kbd "q") 'neotree-hide)
-                (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)
-                (define-key evil-normal-state-local-map (kbd "g") 'neotree-refresh)
-                (define-key evil-normal-state-local-map (kbd "n") 'neotree-next-line)
-                (define-key evil-normal-state-local-map (kbd "p") 'neotree-previous-line)
-                (define-key evil-normal-state-local-map (kbd "A") 'neotree-stretch-toggle)
-                (define-key evil-normal-state-local-map (kbd "H") 'neotree-hidden-file-toggle)))
-
-(defun bs-php-mode-hook ()
-  (setq indent-tabs-mode nil)
-  (setq c-basic-offset 2)
-  (setq php-template-compatibility nil)
-  (subword-mode 1))
-
-(add-hook 'php-mode-hook 'bs-php-mode-hook)
-
-(defun toggle-php-flavor-mode ()
-  (interactive)
-  "Toggle mode between PHP & Web-Mode Helper modes"
-  (cond ((string= mode-name "PHP")
-         (web-mode))
-        ((string= mode-name "Web")
-         (php-mode))))
-
-(global-set-key [f5] 'toggle-php-flavor-mode)
-
-(defun bs-php-mode-hook ()
-  (auto-complete-mode t)                 ;; «
-  (require 'ac-php)                      ;; «
-  (setq ac-sources  '(ac-source-php ))   ;; «
-  (yas-global-mode 1)                    ;; «
-  (setq indent-tabs-mode nil)
-  (setq php-template-compatibility nil)
-  (setq c-basic-offset 2))
-
-;; Google Translate
-(require 'google-translate)
-(require 'google-translate-default-ui)
-(global-set-key "\C-ct" 'google-translate-at-point)
-(global-set-key "\C-cT" 'google-translate-query-translate)
-(defun google-translate--search-tkk () "Search TKK." (list 430675 2721866130))
-(setq google-translate-backend-method 'curl)
