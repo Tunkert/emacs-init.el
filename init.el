@@ -2,10 +2,7 @@
 (setq inhibit-splash-screen t)
 
 ;; set default font and size
-(set-face-attribute 'default nil :font "Inconsolata-11" )
-
-;; maximize screen on startup
-(add-hook 'window-setup-hook 'toggle-frame-maximized t)
+(set-face-attribute 'default nil :font "Cousine-11" )
 
 ;; disable menu on startup
 (menu-bar-mode -1)
@@ -25,9 +22,3 @@
 
 ;; no backup files
 (setq make-backup-files nil)
-
-;; set indent for html to 4 spaces
-(setq sgml-basic-offset 4)
-
-;; hide status bar
-(setq-default mode-line-format nil)
