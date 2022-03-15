@@ -31,7 +31,7 @@
  '(custom-safe-themes
    '("c4063322b5011829f7fdd7509979b5823e8eea2abf1fe5572ec4b7af1dd78519" default))
  '(package-selected-packages
-   '(web-mode js2-mode doom-modeline doom-themes all-the-icons)))
+   '(olivetti markdown-mode web-mode js2-mode doom-modeline doom-themes all-the-icons)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
