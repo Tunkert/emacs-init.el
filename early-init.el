@@ -6,7 +6,7 @@
 (setq inhibit-splash-screen t)
 
 ;; set default font and size
-(set-face-attribute 'default nil :font "Hermit-11" )
+;; (set-face-attribute 'default nil :font "Hermit-11" )
 
 ;; disable menu on startup
 (menu-bar-mode -1)
