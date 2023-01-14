@@ -16,7 +16,7 @@
      ("nongnu" . "https://elpa.nongnu.org/nongnu/")
      ("melpa" . "https://melpa.org/packages/")))
  '(package-selected-packages
-   '(olivetti doom-themes key-chord telephone-line spacemacs-theme evil zenburn-theme guru-mode keycast markdown-mode web-mode monokai-theme))
+   '(evil-surround olivetti doom-themes key-chord telephone-line spacemacs-theme evil zenburn-theme guru-mode keycast markdown-mode web-mode monokai-theme))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil))
 (custom-set-faces
@@ -70,3 +70,6 @@
 
 ;; olivetti
 (require 'olivetti)
+
+;; evil surround
+(global-evil-surround-mode 1)
