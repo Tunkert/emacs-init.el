@@ -24,7 +24,7 @@
 (setq display-line-numbers-type 'relative)
 
 ;; packages to install
-(setq package-list '(material-theme zenburn-theme markdown-mode php-mode web-mode emmet-mode doom-modeline all-the-icons doom-themes))
+(setq package-list '(material-theme zenburn-theme markdown-mode php-mode web-mode js2-mode emmet-mode doom-modeline all-the-icons doom-themes))
 
 ;; melpa repository
 (require 'package)
