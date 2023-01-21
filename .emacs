@@ -17,7 +17,7 @@
 (add-to-list 'default-frame-alist '(font . "Source Code Pro-11" ))
 
 ;; packages to install
-(setq package-list '(sublime-themes markdown-mode web-mode js2-mode emmet-mode doom-modeline all-the-icons))
+(setq package-list '(zenburn-theme sublime-themes markdown-mode web-mode js2-mode emmet-mode doom-modeline all-the-icons))
 
 ;; melpa repository
 (require 'package)
@@ -36,7 +36,7 @@
     (package-install package)))
 
 ;; load-theme
-(load-theme 'spolsky t)
+(load-theme 'zenburn t)
 
 ;; emmet mode
 (require 'emmet-mode)
@@ -81,4 +81,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:background nil)))))
