@@ -13,7 +13,7 @@
 (add-to-list 'default-frame-alist '(font . "Hermit-10" ))
 
 ;; packages to install
-(setq package-list '(zenburn-theme))
+(setq package-list '(zenburn-theme olivetti))
 
 ;; melpa
 (require 'package)
@@ -33,15 +33,12 @@
 
 ;; load-theme
 (load-theme 'zenburn t)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages '(zenburn-theme)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+
+;; org mode export options
+(setq org-html-doctype "html5")
+(setq org-html-preamble 'nil)
+(setq org-html-postamble 'nil)
+(setq org-html-head-include-default-style 'nil)
+
+;; olivetti
+(require 'olivetti)
